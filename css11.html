@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        body, html {width: 100%;}
+        ul{list-style: none;}
+        a {text-decoration: none;}
+        .container {width: 1280px; margin: 0 auto;}
+        .lst{width:1280px;height: 480px;clear: both;margin: 0 auto;}
+        .lst:after {content:""; clear: both; display: block;}
+        .lst li{width: 25% ;float: left;min-height: 400px;position: relative;overflow: hidden;}
+        .lst li a{margin: 25px ; border: 3px solid #333 ; display: block;}
+        .ani1 li a {height: 80px   ;width: 80px ;position: absolute;animation: ani1 20s;}
+        .ani1 li a span{display: block;}
+        .ani1 li.item1 a{animation-duration: 10s;}
+        .ani1 li.item2 a{animation-duration: 15s;}
+        .ani1 li.item3 a{animation-duration: 5s;}
+        .ani1 li.item4 a{animation-duration: 20s;}
+
+        @keyframes ani1{
+            0% {left:0px; border-radius: 44px; top: 0px ; background-color: #fff;}
+            20% {left:200px; border-radius: 0px; top: 200px ; background-color:gold;}
+            40%{left:0px; border-radius: 44px; top: 0px ; background-color: pink;}
+            60%{left:0px; border-radius: 0px; top: 200px ; background-color: deepskyblue}
+            80%{left:0px; border-radius: 44px; top: 0px ; background-color: deeppink}
+            100%{left:0px; border-radius: 44px; top: 0px ; background-color: #fff;}
+        }
+  
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">CSS Animation property</h2>
+        <p>Animation 속성 : animation-name( 애니메이션 이름), animation-duration(애니메이션 실행시간), animation-timing-function(애니메이션 시간함수), animation-delay(애니메이션 지연시간), animation-direction(애니메이션 흐름방향), animation-fill-mode(애니메이션 실행모드), animation-play-state(애니메이션 재생상태)</p>
+    </div>
+    <br><hr><br>
+    <ul class="ani1 lst">
+        <li class="item1"><a href=""><span class="shape">도형1</span></a></li>
+        <li class="item2"><a href=""><span class="shape">도형2</span></a></li>
+        <li class="item3"><a href=""><span class="shape">도형3</span></a></li>
+        <li class="item4"><a href=""><span class="shape">도형4</span></a></li>
+    </ul>
+ 
+</body>
+</html>

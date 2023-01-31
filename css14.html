@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 14</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        body, html {width: 100%;}
+        ul{list-style: none;}
+        a {text-decoration: none;}
+        .container {width: 1280px; margin: 0 auto;}
+        .container:after{content:" "; clear: both; display: block;}
+        .page{clear: both;width: 100vw  ; height: 100vh; overflow: hidden; position: relative;}
+        .page:after{content:"";clear: both;display: block;}
+        .page_tit {color: deeppink; text-shadow: 2px 2px 2px #fff; }
+        .shape{display: block; width: 200px; height: 200px;line-height: 200px;background-color: orange; border-radius: 120px;text-align: center; position: absolute;font-size: 40px;color: #fff;}
+        .shape1{animation-name: ani1; animation-duration: 3.5s;animation-fill-mode: both;animation-iteration-count:infinite;}
+        @keyframes ani1{
+            0% {transform: translateX(0px) translateY(0px) rotate(0deg) scale(0.5);}
+            50% {transform: translateX(600px) translateY(0px) rotate(720deg) scale(1);}
+            100% {transform: translateX(600px) translateY(600px) rotate(0deg) scale(0.5);}
+        }
+
+        .shape2{border-radius: 0px; background-color: deepskyblue; transform-origin: 50% 100%; animation-name: ani2; animation-duration: 2.5s;animation-fill-mode: both; animation-iteration-count: infinite;}
+        @keyframes ani2{
+            0% {transform: skew(0deg) translateX(0px);}
+            50% {transform: skew(60deg) translateX(500px);}
+            100% {transform: skew(-60deg) translateX(0px);}
+            
+        }
+        .shape3{animation-name: ani3; animation-duration: 5s;animation-fill-mode: both; animation-iteration-count: infinite; transform-origin: 30% 50%;}
+        @keyframes ani3{
+            0% {transform: rotate(0deg) translateX(0px);}
+            50% {transform: rotate(960deg) translateX(500px);}
+            100% {transform: rotate(-960deg) translateX(0px);}
+            
+        }
+
+        #page.container{margin-top: 100px;padding-top: 100px; perspective: 200px;}  /*perspective 원근감 : box를 감싸고 있는 부모에게 걸어줌*/
+        .box {animation-name:box1; animation-duration: 5s; animation-iteration-count: infinite; animation-fill-mode: both;transform: rotate(0deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg); transform-style: preserve-3d; transform-origin: 100px 100px;} 
+        @keyframes box1{
+            0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+            100% { transform: rotateX(720deg) rotateY(720deg) rotateZ(720deg);}
+        }
+
+
+        .box span{display: block; width: 200px; height: 200px;position: absolute;}
+        .box .item1{background-color: gold; transform: rotateY(0deg) translate3d(0px, 0px, 100px);}
+        .box .item2{background-color: silver; transform: rotateY(90deg) translate3d(0px, 0px, 100px);}
+        .box .item3{background-color: deeppink; transform: rotateY(180deg) translate3d(0px, 0px, 100px);}
+        .box .item4{background-color: orange; transform: rotateY(270deg) translate3d(0px, 0px, 100px);}
+        .box .item5{background-color: deepskyblue; transform: rotateY(90deg) translate3d(0px, 0px, 100px);}
+        .box .item6{background-color:darkseagreen; transform: rotateY(270deg) translate3d(0px, 0px, 100px);}
+    </style>
+</head>
+<body>
+    <div class="page" id="page1">
+        <div class="container">
+            <span class="shape shape1">원</span>
+        </div>
+    </div>
+    <div class="page" id="page2">
+        <div class="container">
+            <span class="shape shape2">사각</span>
+        </div>
+    </div>
+    <div class="page" id="page3">
+        <div class="container">
+            <span class="shape shape3">원</span>
+        </div>
+    </div>
+    <div class="page" id="page3">
+        <div class="container">
+            <div class="box">
+                <span class="side item1"></span>
+                <span class="side item2"></span>
+                <span class="side item3"></span>
+                <span class="side item4"></span>
+                <span class="side item5"></span>
+                <span class="side item6"></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

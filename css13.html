@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 13</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        body, html {width: 100%;}
+        ul{list-style: none;}
+        a {text-decoration: none;}
+        .container {width: 1280px; margin: 0 auto;}
+        .container:after{content:" "; clear: both; display: block;}
+        .page{clear: both;width: 100vw  ; height: 100vh; overflow: hidden;}
+        .page:after{content:"";clear: both;display: block;}
+        .page_tit {color: deeppink; text-shadow: 2px 2px 2px #fff; }
+        .mask1{mask-image:url("/mask2.png");}
+        .mask2{mask-image:url("/mask2.png"); mask-repeat: no-repeat;}
+        .mask3{mask-image:url("/mask2.png"); mask-position: center  ;}
+        .mask4{mask-image:url("/mask2.png"); mask-size: 50%;}
+        .mask5{mask-image:url("/mask2.png"); mask-repeat:no-repeat; }
+        .mask6{mask-image:url("/mask2.png"); mask-repeat:no-repeat; mask-position: center; }
+
+        #page5 .mask5{mask-size:0.5%; animation-name: ani1; animation-duration: 2s; animation-iteration-count: infinite; animation-direction: alternate;}
+        @keyframes ani1{
+            0% {mask-size:0.5%;}
+            100%{mask-size:200%;}
+        }
+        #page6 .mask6{mask-size:70%; mask-position: left ; animation-name: ani2; animation-duration: 2.5s; animation-iteration-count: infinite  ;animation-direction: alternate;}
+        @keyframes ani2{
+            0%{mask-position: top left;}
+            100%{mask-position: top right;}
+        }
+
+        #page7,#page8, #page9,#page10,#page11, #page12, #page13{position:relative;}
+        .clip {position: absolute; width: 100px ; height: 100px; top: 50%; left: 50%; margin-left: -450%; margin-top: -450px;background-color: lightblue; background-position: center center; padding: 10px;}
+        #clip1{clip-path: circle(0%);animation-name:ani3; animation-duration: 2.5s;animation-iteration-count:infinite; animation-direction: alternate;}
+        @keyframes ani3{
+            0% {clip-path: circle(0%);}
+            100% {clip-path: circle(50%);}
+        }
+        #clip2 {clip-path: ellipse(25% 40% at 50% 50%);}
+        #clip3 {clip-path: polygon(50% 0%, 0% 100%, 100% 100%);}
+        #clip4 {clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);}
+        #clip5 {clip-path: inset(5% 20% 15% 10%);}
+        #clip6 {clip-path: rect(0px, 100px, 100px, 0px);}
+    </style>
+</head>
+<body>
+    <div class="container">
+    </div>
+    <div class="page" id="page0">
+        <h2 class="page_tit">원래 이미지</h2>
+        <div class="mask0" id="mask0">
+            <img src="/coas.jpg" alt="이미지">
+        </div>
+    </div>
+    <div class="page" id="page1">
+        <h2 class="page_tit">페이지1</h2>
+        <div class="mask1" id="mask1">
+            <img src="/coas.jpg" alt="이미지">
+        </div>
+    </div>
+    <div class="page" id="page2">
+        <h2 class="page_tit">페이지2</h2>
+        <div class="mask2" id="mask2">
+            <img src="/coas.jpg" alt="이미지">
+        </div>
+    </div>
+    <div class="page" id="page3">
+        <h2 class="page_tit">페이지3</h2>
+        <div class="mask3" id="mask3">
+            <img src="/coas.jpg" alt="이미지">
+        </div>
+    </div>
+    <div class="page" id="page4">
+        <h2 class="page_tit">페이지4</h2>
+        <div class="mask4" id="mask4">
+            <img src="/coas.jpg" alt="이미지">
+        </div>
+    </div>
+    <div class="page" id="page5">
+        <h2 class="page_tit">페이지5</h2>
+        <div class="mask5" id="mask5">
+            <img src="/coas.jpg" alt="이미지">
+        </div>
+    </div>
+    <div class="page" id="page6">
+        <h2 class="page_tit">페이지6</h2>
+        <div class="mask6" id="mask6">
+            <img src="/coas.jpg" alt="이미지">
+        </div>
+    </div>
+    <br><hr><br>
+    <div class="page" id="page7">
+        <h2 class="page_tit">페이지7</h2>
+        <div class="clip2" id="clip1">
+            <img src="sea.jpg" alt="이미지">
+        </div>
+    </div>
+    <div class="page" id="page8">
+        <h2 class="page_tit">페이지8</h2>
+        <div class="clip2" id="clip2">
+            <img src="sea.jpg" alt="이미지">
+        </div>
+    </div>
+    <div class="page" id="page9">
+        <h2 class="page_tit">페이지9</h2>
+        <div class="clip3" id="clip3">
+            <img src="sea.jpg" alt="이미지">
+        </div>
+    </div>
+    <div class="page" id="page10">
+        <h2 class="page_tit">페이지10</h2>
+        <div class="clip5" id="clip5">
+            <img src="sea.jpg" alt="이미지">
+        </div>
+    </div>
+    
+</body>
+</html>

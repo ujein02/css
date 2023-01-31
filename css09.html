@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS transition</title>
+    <style>
+        *{margin: 0 ; padding: 0;}
+        body, html {width: 100px;  }
+        ul{list-style: none;}
+        a{text-decoration: none;}
+        .container {width: 1280px; margin: 0 auto;}
+        .container:after{content:""; display: block; clear: both;width: 100%;}
+        .tra_box, .ani_box {width:200px; border:2px solid #333 ; height:200px; font-weight:800; font-size:32px; text-align:center; overflow:hidden; position: relative;}
+        .tra_box ori, .ani_box ori{display:block; width: 200px;height: 200px;}
+        .tra_box .ori{background-color: deepskyblue; position: absolute;}
+        .tra_box:hover{}
+        .tra_box:hover .hv{top:0;}
+
+        .ani_box .hv{background-color: deeppink; color: #fff;position: absolute ;top: 140px;left:0;animation-duration:2s; animation-name:ani1; animation-fill-mode:both;}
+        @keyframes ani1{
+            0% {top:0px; background-color: #fff;}
+            50% {background-color: deepskyblue;}
+            100%{background-color: gold;top:140px}
+        }
+        @keyframes ani2{
+            from{top:140px; background-color: gold;}
+            50%{background-color: deepskyblue;}
+            to{top:0px; background-color: #fff;}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main_tit">CSS Animation</h1>
+        <p>CSS 애니메이션의 </p>
+        <h2 class="title">Transition</h2>
+        <div class="tra_box">
+            <spn class="ori">원래 데이터</spn>
+            <spn class="hv">호버 데이터</spn>
+        </div>
+        <br><br><br>
+        <h2 class="title">Animation</h2>
+        <div class="ani_box">
+            <spn class="ori">원래 데이터</spn>
+            <spn class="hv">호버 데이터</spn>
+        </div>
+    </div>
+    
+</body>
+</html>
